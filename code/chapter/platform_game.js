@@ -133,7 +133,7 @@ function elt(name, attrs, ...children) {
 
 var DOMDisplay = class DOMDisplay {
   constructor(parent, level) {
-    this.dom = elt("div", {class: "css_game"}, drawGrid(level));
+    this.dom = elt("div", {class: "game"}, drawGrid(level));
     this.actorLayer = null;
     parent.appendChild(this.dom);
   }
@@ -168,7 +168,7 @@ DOMDisplay.prototype.syncState = function(state) {
   if (this.actorLayer) this.actorLayer.remove();
   this.actorLayer = drawActors(state.actors);
   this.dom.appendChild(this.actorLayer);
-  this.dom.className = `css_game ${state.status}`;
+  this.dom.className = `game ${state.status}`;
   this.scrollPlayerIntoView(state);
 };
 
