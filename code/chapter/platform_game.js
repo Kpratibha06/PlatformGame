@@ -357,22 +357,3 @@ async function runGame(plans, Display) {
   }
   console.log("Woohoo! You've won!");
 }
-/*
-async function runGame(plans, Display) {
-  let lives = 3;
-  for (let level = 0; level < plans.length;) {
-      document.getElementById("message").innerHTML = (`Lives remaining : ${lives}`);
-      let status = await runLevel(new Level(plans[level]),
-          Display);
-      if (status == "won") level++;
-      if (status == "lost") lives--;
-
-      if (lives == 0) {
-          level = 0;
-          lives = 3;
-          document.getElementById("message").innerHTML = ("Out of lives!!!");
-      }
-  }
-  document.getElementById("message").innerHTML = ("Congratulations! You've won!");
-}
-*/
